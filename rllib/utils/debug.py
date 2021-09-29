@@ -95,7 +95,7 @@ def update_global_seed_if_necessary(framework: Optional[str] = None,
         # See https://github.com/pytorch/pytorch/issues/47672.
         cuda_version = torch.version.cuda
         if cuda_version is not None and float(torch.version.cuda) >= 10.2:
-            os.environ["CUBLAS_WORKSPACE_CONFIG"] = "4096:8"
+            os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
         else:
             from distutils.version import LooseVersion
 
